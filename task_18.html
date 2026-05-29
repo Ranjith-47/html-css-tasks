@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tooltip</title>
+<style>
+.tip{
+    position:relative;
+    display:inline-block;
+}
+
+.text{
+    display:none;
+    background-color:black;
+    color:white;
+    padding:5px;
+    position:absolute;
+}
+
+.tip:hover .text{
+    display:block;
+}
+</style>
+</head>
+<body>
+
+<div class="tip">
+    Hover Here
+    <span class="text">Hello</span>
+</div>
+
+</body>
+</html>
