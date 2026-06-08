@@ -15,21 +15,24 @@ public class Sll {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int val;
+        System.out.println("Enter the values to be inserted: (-1 to stop)");
         while (true) {
             val = input.nextInt();
             if (val == -1)
                 break;
             end_insertion(val);
         }
-        display();
+
         /*
          * end_insertion(100);
          * display();
          */
 
         position_insertion(1, 500);
+        delete_begin();
+        delete_end();
+        delete_position(3);
         display();
-
     }
 
     public static void begin_insertion(int ele) {
@@ -98,4 +101,48 @@ public class Sll {
 
         }
     }
+
+    public static void delete_begin() {
+        if (head == null)
+            System.out.println("list is empty");
+        else {
+            head = head.next;
+        }
+    }
+
+    public static void delete_end() {
+        if (head == null)
+            System.out.println("list is empty");
+        else if (head.next == null)
+            head = null;
+        else {
+            Node temp = head;
+            while (temp.next.next != null) {
+                temp = temp.next;
+            }
+            temp.next = null;
+        }
+    }
+
+    public static void delete_position(int pos) {
+        if (head == null)
+            System.out.println("list is empty");
+        else if (pos == 1)
+            head = head.next;
+        else {
+            Node temp = head;
+            int i;
+            for (i = 1; i <= pos - 2; i += 1) {
+                if (temp.next == null)
+                    break;
+                temp = temp.next;
+            }
+            if (i <= pos - 2 || temp.next == null)
+                System.out.println("position not availbale");
+            else {
+                temp.next = temp.next.next;
+            }
+        }
+    }
+
 }
