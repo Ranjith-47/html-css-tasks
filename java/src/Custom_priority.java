@@ -20,8 +20,8 @@ public class Custom_priority {
                     return  s1.roll_no - s2.roll_no;
                 }
         );
-        que.offer(new student(103,"CCC",5.67f));
-        que.offer(new student(104,"DDD", 6.78f));
+        que.offer(new student(104,"CCC",5.67f));
+        que.offer(new student(103,"CCC", 6.78f));
         que.offer(new student(105,"EEE",7.88f));
         while (!que.isEmpty()) {
             student s = que.poll();
