@@ -9,7 +9,7 @@ class Node {
     }
 }
 
-public class Singly_linked_list {
+public class Sll {
     public static Node head = null;
 
     static void main() {
