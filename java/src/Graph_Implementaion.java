@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 class Edge{
     int dest;
     int weight;
@@ -38,6 +40,27 @@ class Graph{
             System.out.println();
         }
     }
+    public void BFS(int s)
+    {
+        boolean[] visited = new boolean[vertices];
+        Queue<Integer> q = new LinkedList<>();
+        visited[s] = true;
+        q.offer(s);
+        while(!q.isEmpty())
+        {
+            int cur = q.poll();
+            System.out.print((char)(cur + 65)+" -> ");
+            for(Edge x: adjlist.get(cur))
+            {
+                int dest = x.dest;
+                if(!visited[dest])
+                {
+                    visited[dest] = true;
+                    q.offer(dest);
+                }
+            }
+        }
+    }
 }
 public class Graph_Implementaion {
     public static void main(String[] args) {
@@ -51,5 +74,7 @@ public class Graph_Implementaion {
         g.addEdge(2,3,6,false);
         g.addEdge(4,3,7,false);
         g.display();
+        System.out.println("DFS Traversal: ");
+        g.BFS(0);
     }
 }
