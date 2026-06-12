@@ -12,7 +12,7 @@ class Node {
 public class Sll {
     public static Node head = null;
 
-    static void main() {
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int val;
         while (true) {

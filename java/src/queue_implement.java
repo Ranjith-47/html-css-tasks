@@ -12,7 +12,7 @@ class Node3 {
 public class queue_implement {
     public static Node3 front = null, rear = null;
 
-    static void main() {
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int choice;
         System.out.println("1.Enqueue() 2.Dequeue 3.display() -1 for exit");

@@ -14,7 +14,7 @@ class Node2 {
 public class CDLL_implement {
     public static Node2 head = null;
 
-    static void main() {
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int ele;
 

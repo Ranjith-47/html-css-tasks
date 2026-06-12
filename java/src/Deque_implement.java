@@ -12,7 +12,7 @@ class Node4 {
 public class Deque_implement {
     public static Node4 front = null, rear = null;
 
-    static void main() {
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int choice;
         System.out.println(

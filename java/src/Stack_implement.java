@@ -12,7 +12,7 @@ class stack_Node {
 public class Stack_implement {
     public static stack_Node top = null;
 
-    static void main() {
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("1.push() 2.pop() 3.peek() 4.display() 5.size() 6.empty() -1 for exit");
         int choice;
