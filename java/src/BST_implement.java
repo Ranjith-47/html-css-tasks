@@ -13,7 +13,11 @@ public class BST_implement {
                 break;
             root = insertion(root,ele);
         }
-       inorder(root);
+        inorder(root);
+        System.out.println();
+        delete_key(root,20);
+        inorder(root);
+        System.out.println();
     }
     public static BNode create_node(int val)
     {
@@ -42,5 +46,48 @@ public class BST_implement {
             System.out.print(node.data+" ");
             inorder(node.right);
         }
+
+    }
+    public static BNode delete_key(BNode node,int key)
+    {
+        if(root == null)
+        {
+            System.out.println("Empty");
+            return null;
+        }
+        if(key < node.data)
+        {
+            delete_key(node.left, key);
+        }
+        else if(key > node.data)
+        {
+            delete_key(node.right, key);
+        }
+        else{
+            if(node.left == null && node.right==null)
+            {
+                return null;
+            }
+            if(node.left==null)
+            {
+                return node.right;
+            }
+            if(node.right==null)
+            {
+                return node.left;
+            }
+            BNode successor = next_node(node.right);
+            node.data = successor.data;
+            node.right = delete_key(node.right, successor.data);
+        }
+        return node;
+    }
+    public static BNode next_node(BNode node)
+    {
+        while(node.left != null)
+        {
+            node = node.left;
+        }
+        return node;
     }
 }
